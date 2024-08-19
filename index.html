@@ -10,15 +10,16 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
+            background-color: #17202a;
         }
 
         .container {
-            width: 80%;
+            width: 100%;
+            max-width: 1500px;
             margin: 0 auto;
             border: 1px solid #000;
             padding: 20px;
-            background-color: #fff;
+            background-color: #566573;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             overflow: hidden;
         }
@@ -32,7 +33,7 @@
 
         .header h1 {
             font-size: 1.5em;
-            color: #007bff;
+            color: #fff;
             margin: 0;
         }
 
@@ -53,13 +54,13 @@
         }
 
         .tabs button.active {
-            background-color: #007bff;
+            background-color: #283747;
             color: white;
         }
 
         .content {
             margin-top: 20px;
-            height: 500px;
+            height: 1000px;
             overflow-y: scroll;
             border: 1px solid #ccc;
             padding: 10px;
@@ -69,9 +70,57 @@
             display: none;
         }
 
-        .content video {
-            width: 100%;
+        .project-item {
+            display: flex; /* 使用 flex 布局 */
+            align-items: flex-start; /* 顶部对齐 */
+            margin-bottom: 20px;
+        }
+        
+        .project-item.vertical {
+            flex-direction: column; /* 垂直布局 */
+            align-items: center; /* 居中对齐 */
+        }
+        
+        .video-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .video-item {
+            flex: 1 1 calc(33.333% - 20px);
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .video-item video {
+            width: 360px;
+            height: 640px;
             border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .video-item h3 {
+            color: white;
+            margin: 0 0 10px;
+            font-size: 1.2em;
+        }
+
+        .project-item video {
+            border-radius: 8px;
+            margin-bottom: 20px; /*文字和视频之间的间距*/
+            margin-right:20px;
+        }
+
+        .large-video {
+            width: 1280px;
+            height: 720px;
+        }
+        
+        .project-description {
+            max-width: 500px; /* 设置介绍文字的最大宽度 */
+            color: white; /*将项目说明文字设置为白色*/
         }
 
         .content h2 {
@@ -84,7 +133,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>持之以恒，<br>一以贯之</h1>
+            <h1>持之以恒，一以贯之</h1>
             <div class="tabs">
                 <button class="tab-link active" onclick="openTab('project')">项目展示</button>
                 <button class="tab-link" onclick="openTab('blog')">技术博客</button>
@@ -92,19 +141,89 @@
             </div>
         </div>
         <div id="project" class="content">
-            <h2>项目展示</h2>
-            <video controls>
-                <source src="your-video-file.mp4" type="video/mp4">
-                您的浏览器不支持视频标签。
-            </video>
-            <p>项目介绍：这里是项目介绍的文字内容。</p>
-        </div>
+            <h2 class="project-description">撒欢吧亲</h2>
+            <div class="video-grid">
+                <div class="video-item">
+					<h3>待机玩法</h3>
+					<video controls>
+						<source src="YangHu_DaiJi.mp4" type="video/mp4">
+						您的浏览器不支持视频标签。
+					</video> 
+				</div>
+				<div class="video-item">
+					<h3>选择角色</h3>
+					<video controls>
+						<source src="YangHu_XuanJue.mp4" type="video/mp4">
+						您的浏览器不支持视频标签。
+					</video>
+				</div>
+				<div class="video-item">
+					<h3>采花玩法</h3>
+					<video controls>
+						<source src="YangHu_CaiHua.mp4" type="video/mp4">
+						您的浏览器不支持视频标签。
+					</video>
+				</div>
+				<div class="video-item">
+					<h3>抓土拨鼠</h3>
+					<video controls>
+						<source src="YangHu_TuBoShu.mp4" type="video/mp4">
+						您的浏览器不支持视频标签。
+					</video>
+				</div>
+				<div class="video-item">
+					<h3>传送带</h3>
+					<video controls>
+						<source src="YangHu_ChuanSongDai.mp4" type="video/mp4">
+						您的浏览器不支持视频标签。
+					</video>
+				</div>
+				<div class="video-item">
+					<h3>骑牛玩法</h3>
+					<video controls>
+						<source src="YangHu_QiNiu.mp4" type="video/mp4">
+						您的浏览器不支持视频标签。
+					</video>
+				</div>
+            </div>        
+            <div class="project-item">
+                <video class="small-video" controls>
+                    <source src="KeJiZhiYan.mp4" type="video/mp4">
+                    您的浏览器不支持视频标签。
+                </video>
+                <p class="project-description">科技之眼：根据待机时安卓截取的PNG格式摄像头画面，使用StableDiffusion</p>
+			</div>
+        
+			<div class="project-item vertical">
+				<video class="large-video" controls>
+					<source src="ThreeDMotionCap01.mp4" type="video/mp4">
+					您的浏览器不支持视频标签。
+				</video>
+			</div>
+			
+			<div class="project-item vertical">
+				<video class="large-video" controls>
+					<source src="ThreeDMotionCap02.mp4" type="video/mp4">
+					您的浏览器不支持视频标签。
+				</video>
+				<p class="project-description">3D动作捕捉：这里是项目介绍的文字内容。</p>
+			</div>
+			
+			<div class="project-item vertical">
+				<video class="large-video" controls>
+					<source src="KuYueYunDong.mp4" type="video/mp4">
+					您的浏览器不支持视频标签。
+				</video>
+				<p class="project-description">酷约运动：这里是项目介绍的文字内容。</p>
+			</div>
+		</div>
+            <!-- 更多项目展示 -->
         <div id="blog" class="content hidden">
             <h2>技术博客</h2>
             <ul>
-                <li><a href="#">文章标题 1</a></li>
-                <li><a href="#">文章标题 2</a></li>
-                <li><a href="#">文章标题 3</a></li>
+                <li><a href="#" onclick="openArticle(event, 'article1.html')">文章标题 1</a></li>
+                <li><a href="#" onclick="openArticle(event, 'article2.html')">文章标题 2</a></li>
+                <li><a href="#" onclick="openArticle(event, 'article3.html')">文章标题 3</a></li>
                 <!-- 更多文章链接 -->
             </ul>
         </div>
@@ -127,6 +246,11 @@
                 tablinks[i].classList.remove("active");
             }
             event.currentTarget.classList.add("active");
+        }
+
+        function openArticle(event, articleUrl) {
+            event.preventDefault();
+            window.open(articleUrl, '_blank');
         }
     </script>
 </body>
