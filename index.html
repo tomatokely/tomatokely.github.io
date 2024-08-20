@@ -75,6 +75,30 @@
             align-items: flex-start; /* 顶部对齐 */
             margin-bottom: 20px;
         }
+
+        .right-content {
+            margin-left: 20px; /* 给右侧内容一些左边距 */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* 居中对齐 */
+        }
+
+        .project-image {
+            max-width: 300px; /* 设置图片的最大宽度 */
+            border-radius: 8px; /* 可选：使图片有圆角 */
+        }
+
+        .image-text-pair {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .image-pair {
+            display: flex; /* 将两张图片并排显示 */
+            gap: 20px; /* 设置图片之间的间距 */
+            margin-bottom: 10px; /* 图片和描述文字之间的间距 */
+        }
         
         .project-item.vertical {
             flex-direction: column; /* 垂直布局 */
@@ -117,10 +141,11 @@
             width: 1280px;
             height: 720px;
         }
-        
+
         .project-description {
-            max-width: 500px; /* 设置介绍文字的最大宽度 */
-            color: white; /*将项目说明文字设置为白色*/
+            max-width: 300px; /* 使描述文字和图片宽度一致 */
+            color: white; /* 将项目说明文字设置为白色 */
+            text-align: center;
         }
 
         .content h2 {
@@ -191,8 +216,14 @@
                     <source src="KeJiZhiYan.mp4" type="video/mp4">
                     您的浏览器不支持视频标签。
                 </video>
-                <p class="project-description">科技之眼：根据待机时安卓截取的PNG格式摄像头画面，使用StableDiffusion</p>
-			</div>
+                <div class="right-content">
+                    <div class="image-pair">
+                        <img src="AI_01.jpg" alt="科技之眼图片1" class="project-image">
+                        <img src="AI_02.jpg" alt="科技之眼图片2" class="project-image">
+                    </div>
+                    <p class="project-description">科技之眼：根据待机时安卓截取的PNG格式摄像头画面，使用StableDiffusion</p>
+                </div>
+            </div>
         
 			<div class="project-item vertical">
 				<video class="large-video" controls>
